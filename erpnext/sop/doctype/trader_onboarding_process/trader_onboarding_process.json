@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-09 18:20:23.048242",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "mobile_number",
+  "email",
+  "national_identification_number_nin",
+  "bank_verification_number_bvn",
+  "column_break_6c9g",
+  "residential_address",
+  "business_location_address",
+  "proof_of_business_operations",
+  "alternative_idletters",
+  "section_break_gruu",
+  "gps_coordinates"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_verification_number_bvn",
+   "fieldtype": "Data",
+   "label": "Bank Verification Number (BVN)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "national_identification_number_nin",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "National Identification Number (NIN)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "residential_address",
+   "fieldtype": "Small Text",
+   "label": "Residential Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gps_coordinates",
+   "fieldtype": "Geolocation",
+   "label": "GPS Coordinates",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_location_address",
+   "fieldtype": "Small Text",
+   "label": "Business Location Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "proof_of_business_operations",
+   "fieldtype": "Attach",
+   "label": "Proof of Business Operations",
+   "reqd": 1
+  },
+  {
+   "fieldname": "alternative_idletters",
+   "fieldtype": "Attach",
+   "label": "Alternative ID/Letters",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6c9g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gruu",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-10 12:31:54.598075",
+ "modified_by": "Administrator",
+ "module": "SOP",
+ "name": "Trader Onboarding Process",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
