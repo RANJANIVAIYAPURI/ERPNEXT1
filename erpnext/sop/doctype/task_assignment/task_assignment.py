@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class StockistsOnboardingProcess(Document):
+class TaskAssignment(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,14 +14,9 @@ class StockistsOnboardingProcess(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		agreement_to_terms_and_conditions: DF.Check
-		bank_verification_number_bvn: DF.Data
-		business_location_address: DF.SmallText
-		email: DF.Data
-		mobile_number: DF.Phone
-		name1: DF.Data
-		naming_series: DF.Literal["STOCKIST-ONBOARD-.DD.-.MM.-.YYYY.-"]
-		national_identification_number_nin: DF.Data
-		residential_address: DF.SmallText
+		assigned_to: DF.Link | None
+		description: DF.Text | None
+		status: DF.Literal["Assigned", "In Progress", "Review", "Rejected for Approval", "Submitted", "Rejected", "Completed"]
+		task_title: DF.Data | None
 	# end: auto-generated types
 	pass

@@ -1,22 +1,31 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-12-09 18:20:23.048242",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "basic_details_section",
+  "naming_series",
   "name1",
   "mobile_number",
   "email",
-  "national_identification_number_nin",
-  "bank_verification_number_bvn",
-  "column_break_6c9g",
   "residential_address",
   "business_location_address",
+  "column_break_6c9g",
+  "gps_coordinates",
+  "tab_break_sokb",
+  "doc_section",
   "proof_of_business_operations",
   "alternative_idletters",
-  "section_break_gruu",
-  "gps_coordinates"
+  "documents_table",
+  "feedback",
+  "tab_break_sd2r",
+  "account_details",
+  "national_identification_number_nin",
+  "bank_verification_number_bvn",
+  "credit_limit"
  ],
  "fields": [
   {
@@ -85,19 +94,65 @@
   },
   {
    "fieldname": "column_break_6c9g",
-   "fieldtype": "Column Break"
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "section_break_gruu",
-   "fieldtype": "Section Break"
+   "fieldname": "tab_break_sokb",
+   "fieldtype": "Tab Break",
+   "label": "Field Agent Verification"
+  },
+  {
+   "fieldname": "tab_break_sd2r",
+   "fieldtype": "Tab Break",
+   "label": "Account Creation"
+  },
+  {
+   "fieldname": "account_details",
+   "fieldtype": "Data",
+   "label": "Account Details",
+   "reqd": 1
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Currency",
+   "label": "Credit Limit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TRADER-ONBOARD-.DD.-.MM.-.YYYY.-"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Tab Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Small Text",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "doc_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "documents_table",
+   "fieldtype": "Table",
+   "label": "Documents Table",
+   "options": "Traders Documents"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-10 12:31:54.598075",
+ "modified": "2024-12-12 20:42:34.316977",
  "modified_by": "Administrator",
  "module": "SOP",
  "name": "Trader Onboarding Process",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

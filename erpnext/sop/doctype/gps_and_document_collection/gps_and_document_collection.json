@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-13 15:29:04.224093",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "gps_coordinates",
+  "documents",
+  "verification_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "gps_coordinates",
+   "fieldtype": "Geolocation",
+   "label": "GPS Coordinates "
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Traders Documents"
+  },
+  {
+   "fieldname": "verification_status",
+   "fieldtype": "Select",
+   "label": "Verification Status ",
+   "options": "Not Collected\nCollected\nVerified"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-13 15:31:05.798187",
+ "modified_by": "Administrator",
+ "module": "SOP",
+ "name": "GPS and Document Collection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

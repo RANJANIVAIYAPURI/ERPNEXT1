@@ -1,10 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-12-09 18:10:30.205345",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "name1",
   "mobile_number",
   "email",
@@ -83,14 +85,21 @@
    "fieldtype": "Data",
    "label": "Email",
    "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "STOCKIST-ONBOARD-.DD.-.MM.-.YYYY.-"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-10 12:30:18.299959",
+ "modified": "2024-12-12 18:18:47.724559",
  "modified_by": "Administrator",
  "module": "SOP",
  "name": "Stockists Onboarding Process",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
