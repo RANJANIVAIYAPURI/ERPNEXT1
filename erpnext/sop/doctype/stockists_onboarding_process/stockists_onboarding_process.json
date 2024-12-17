@@ -9,6 +9,7 @@
   "naming_series",
   "name1",
   "mobile_number",
+  "date_of_birth",
   "email",
   "bank_verification_number_bvn",
   "national_identification_number_nin",
@@ -91,11 +92,18 @@
    "fieldtype": "Select",
    "label": "Series",
    "options": "STOCKIST-ONBOARD-.DD.-.MM.-.YYYY.-"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Of Birth",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-12 18:18:47.724559",
+ "modified": "2024-12-17 12:59:04.961568",
  "modified_by": "Administrator",
  "module": "SOP",
  "name": "Stockists Onboarding Process",

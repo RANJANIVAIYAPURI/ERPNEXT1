@@ -9,6 +9,7 @@
   "basic_details_section",
   "naming_series",
   "name1",
+  "date_of_birth",
   "mobile_number",
   "email",
   "residential_address",
@@ -17,15 +18,16 @@
   "gps_coordinates",
   "tab_break_sokb",
   "doc_section",
-  "proof_of_business_operations",
-  "alternative_idletters",
+  "field_agent_name",
+  "business_category",
   "documents_table",
   "feedback",
   "tab_break_sd2r",
   "account_details",
   "national_identification_number_nin",
   "bank_verification_number_bvn",
-  "credit_limit"
+  "credit_limit",
+  "transaction_tab"
  ],
  "fields": [
   {
@@ -58,8 +60,7 @@
   {
    "fieldname": "residential_address",
    "fieldtype": "Small Text",
-   "label": "Residential Address",
-   "reqd": 1
+   "label": "Residential Address"
   },
   {
    "fieldname": "gps_coordinates",
@@ -78,18 +79,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Email",
-   "reqd": 1
-  },
-  {
-   "fieldname": "proof_of_business_operations",
-   "fieldtype": "Attach",
-   "label": "Proof of Business Operations",
-   "reqd": 1
-  },
-  {
-   "fieldname": "alternative_idletters",
-   "fieldtype": "Attach",
-   "label": "Alternative ID/Letters",
    "reqd": 1
   },
   {
@@ -144,11 +133,37 @@
    "fieldtype": "Table",
    "label": "Documents Table",
    "options": "Traders Documents"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_category",
+   "fieldtype": "Select",
+   "label": "Business Category",
+   "options": "Business A\nBusiness B\nBusiness c",
+   "reqd": 1
+  },
+  {
+   "fieldname": "field_agent_name",
+   "fieldtype": "Link",
+   "label": "Field Agent Name",
+   "options": "Field Agent Doc",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_tab",
+   "fieldtype": "Tab Break",
+   "label": "Transaction"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-12 20:42:34.316977",
+ "modified": "2024-12-17 16:00:51.822827",
  "modified_by": "Administrator",
  "module": "SOP",
  "name": "Trader Onboarding Process",

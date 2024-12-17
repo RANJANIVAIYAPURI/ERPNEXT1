@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class TraderOnboardingProcess(Document):
+class FieldAgentDoc(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -15,20 +15,15 @@ class TraderOnboardingProcess(Document):
 		from erpnext.sop.doctype.traders_documents.traders_documents import TradersDocuments
 		from frappe.types import DF
 
-		account_details: DF.Data
-		bank_verification_number_bvn: DF.Data
-		business_category: DF.Literal["Business A", "Business B", "Business c"]
-		business_location_address: DF.SmallText
-		credit_limit: DF.Currency
-		date_of_birth: DF.Date
+		company: DF.Link
+		date_of_joining: DF.Date
+		designation: DF.Data
 		documents_table: DF.Table[TradersDocuments]
 		email: DF.Data
 		feedback: DF.SmallText | None
-		field_agent_name: DF.Link
+		field_agent_id: DF.Data
+		field_agent_name: DF.Data
 		mobile_number: DF.Phone
-		name1: DF.Data
-		naming_series: DF.Literal["TRADER-ONBOARD-.DD.-.MM.-.YYYY.-"]
-		national_identification_number_nin: DF.Data
 		residential_address: DF.SmallText | None
 	# end: auto-generated types
 	pass

@@ -17,6 +17,7 @@ class StockistsOnboardingProcess(Document):
 		agreement_to_terms_and_conditions: DF.Check
 		bank_verification_number_bvn: DF.Data
 		business_location_address: DF.SmallText
+		date_of_birth: DF.Date
 		email: DF.Data
 		mobile_number: DF.Phone
 		name1: DF.Data
