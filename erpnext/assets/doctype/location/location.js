@@ -14,10 +14,24 @@ frappe.ui.form.on("Location", {
 
 	onload_post_render(frm) {
 		if (!frm.doc.location && frm.doc.latitude && frm.doc.longitude) {
+			// Set map view using latitude and longitude
 			frm.fields_dict.location.map.setView([frm.doc.latitude, frm.doc.longitude], 13);
+			console.log(JSON.parse(JSON.stringify({
+				message: "Setting map view with coordinates",
+				latitude: frm.doc.latitude,
+				longitude: frm.doc.longitude,
+			})));
 		} else {
-			frm.doc.latitude = frm.fields_dict.location.map.getCenter()["lat"];
-			frm.doc.longitude = frm.fields_dict.location.map.getCenter()["lng"];
+			// Update latitude and longitude from the map center
+			const mapCenter = frm.fields_dict.location.map.getCenter();
+			frm.doc.latitude = mapCenter.lat;
+			frm.doc.longitude = mapCenter.lng;
+			console.log(JSON.parse(JSON.stringify({
+				message: "Updating coordinates from map center",
+				latitude: frm.doc.latitude,
+				longitude: frm.doc.longitude,
+			})));
 		}
 	},
 });
+

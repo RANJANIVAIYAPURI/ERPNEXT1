@@ -25,6 +25,8 @@ class TraderOnboardingProcess(Document):
 		email: DF.Data
 		feedback: DF.SmallText | None
 		field_agent_name: DF.Link
+		latitude: DF.Data | None
+		longitude: DF.Data | None
 		mobile_number: DF.Phone
 		name1: DF.Data
 		naming_series: DF.Literal["TRADER-ONBOARD-.DD.-.MM.-.YYYY.-"]

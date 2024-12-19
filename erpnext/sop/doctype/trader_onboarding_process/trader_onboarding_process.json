@@ -15,6 +15,10 @@
   "residential_address",
   "business_location_address",
   "column_break_6c9g",
+  "latitude",
+  "column_break_t3c1",
+  "longitude",
+  "section_break_a0vg",
   "gps_coordinates",
   "tab_break_sokb",
   "doc_section",
@@ -159,11 +163,29 @@
    "fieldname": "transaction_tab",
    "fieldtype": "Tab Break",
    "label": "Transaction"
+  },
+  {
+   "fieldname": "section_break_a0vg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "column_break_t3c1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-17 16:00:51.822827",
+ "modified": "2024-12-19 18:50:49.909425",
  "modified_by": "Administrator",
  "module": "SOP",
  "name": "Trader Onboarding Process",
