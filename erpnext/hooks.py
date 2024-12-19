@@ -22,13 +22,13 @@ add_to_apps_screen = [
 
 develop_version = "15.x.x-develop"
 
-app_include_js = "erpnext.bundle.js"
+# app_include_js = "erpnext.bundle.js"
 app_include_css = "erpnext.bundle.css"
 web_include_js = "erpnext-web.bundle.js"
 web_include_css = "erpnext-web.bundle.css"
 email_css = "email_erpnext.bundle.css"
 
-# app_include_js = "/assets/erpnext/js/map_defaults.js"
+app_include_js = "/assets/erpnext/js/map_defaults.js"
 
 doctype_js = {
 	"Address": "public/js/address.js",

@@ -103,50 +103,63 @@ frappe.ui.form.on("Trader Onboarding Process", {
     // // }
 
     
-    //  // Geocoding (address to coordinates) logic
-    //  const addressInput = frm.doc.business_location_address; // Replace with your address input element ID
-    //  const mapContainer = frm.doc.gps_coordinates; // Replace with your map container element ID
    
-    //  if (addressInput ) {
-    //    addressInput.addEventListener('keyup', function() {
-    //      const address = addressInput.value;
-   
-    //      if (address.trim() !== '') {
-    //        frappe.call({
-    //          type: "GET",
-    //          url: `https://nominatim.openstreetmap.org/search?format=json&q=${address}`,
-    //          callback: function(results) {
-    //            if (results.length > 0) {
-    //              const firstResult = results[0];
-    //              const lat = firstResult.lat;
-    //              const lon = firstResult.lon;
-   
-    //              // Initialize or update the map (replace with your preferred mapping library)
-    //              if (!map) { // Check if map exists (assuming a separate map variable)
-    //                map = new L.map(mapContainer).setView([lat, lon], 13); // Assuming Leaflet library
-    //                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    //                }).addTo(map);
-    //              } else {
-    //                map.setView([lat, lon], 13); // Center the map on new coordinates
-    //              }
-   
-    //              // Optionally: Add a marker (replace with your preferred marker implementation)
-    //              const marker = L.marker([lat, lon]).addTo(map);
-    //            } else {
-    //              console.log('No results found for the address.');
-    //            }
-    //          }
-    //        });
-    //      }
-    //    });
-    //  } else {
-    //    console.error('Address input or map container element not found.');
-    //  }
-
 
 
     //     },
+
+    business_location_address: function(frm) {
+        console.log('address_to_coordinates');
+        let address = frm.doc.business_location_address;
+        console.log(address);
+        
+        if (address) {
+            console.log("Address entered: ", address);
+    
+            // Make an API call for geocoding the address
+            frappe.call({
+                type: "GET",
+                url: `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`, 
+                callback: function(response) {
+                    if (response && response.length > 0) {
+                        let lat = response[0].lat;
+                        let lon = response[0].lon;
+                        console.log("Coordinates: ", lat, lon);
+    
+                        // Update GPS coordinates
+                        let geoJSON = {
+                            type: "FeatureCollection",
+                            features: [
+                                {
+                                    type: "Feature",
+                                    geometry: {
+                                        type: "Point",
+                                        coordinates: [parseFloat(lon), parseFloat(lat)]
+                                    },
+                                    properties: {}
+                                }
+                            ]
+                        };
+    
+                        frm.set_value('gps_coordinates', JSON.stringify(geoJSON));
+                        frm.set_value('latitude', JSON.stringify(lat));
+                        frm.set_value('longitude', JSON.stringify(lon));
+    
+                        // Optionally, log success or display a message
+                        frappe.msgprint(__('GPS Coordinates updated successfully!'));
+                    } else {
+                        frappe.msgprint(__('Unable to find coordinates for the entered address.'));
+                    }
+                }
+            });
+        } else {
+            frappe.msgprint(__('Please enter an address.'));
+            frm.set_value('gps_coordinates', '');
+            frm.set_value('latitude', '');
+            frm.set_value('longitude', '');
+        }
+    },
+
 
     residential_address: function(frm) {
         console.log('address_to_coordinates');
@@ -194,8 +207,12 @@ frappe.ui.form.on("Trader Onboarding Process", {
             });
         } else {
             frappe.msgprint(__('Please enter an address.'));
+            frm.set_value('gps_coordinates', '');
+            frm.set_value('latitude', '');
+            frm.set_value('longitude', '');
         }
     },
+    
     
     
     

@@ -8,7 +8,7 @@ const map_settings = frappe.provide("frappe.utils.map_defaults");
 // the map view at openstreetmap.org.
 
 // New default location (middle of germany).
-map_settings.center = [51.57, 9.866];
+// map_settings.center = [51.57, 9.866];
 // new zoomlevel: see the whole country, not just a single city
 map_settings.zoom = 6;
 
