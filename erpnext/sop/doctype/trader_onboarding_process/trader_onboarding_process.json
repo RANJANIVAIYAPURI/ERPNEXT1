@@ -16,8 +16,10 @@
   "business_location_address",
   "column_break_6c9g",
   "latitude",
+  "latitude_1",
   "column_break_t3c1",
   "longitude",
+  "longitude_1",
   "section_break_a0vg",
   "gps_coordinates",
   "tab_break_sokb",
@@ -181,11 +183,21 @@
    "fieldname": "longitude",
    "fieldtype": "Data",
    "label": "Longitude"
+  },
+  {
+   "fieldname": "latitude_1",
+   "fieldtype": "Data",
+   "label": "Latitude 1"
+  },
+  {
+   "fieldname": "longitude_1",
+   "fieldtype": "Data",
+   "label": "Longitude 1"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-19 18:50:49.909425",
+ "modified": "2024-12-24 10:41:49.055803",
  "modified_by": "Administrator",
  "module": "SOP",
  "name": "Trader Onboarding Process",
