@@ -26,6 +26,7 @@ class Issue(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+		address: DF.SmallText | None
 		agreement_status: DF.Literal["First Response Due", "Resolution Due", "Fulfilled", "Failed"]
 		attachment: DF.Attach | None
 		avg_response_time: DF.Duration | None
@@ -35,16 +36,21 @@ class Issue(Document):
 		customer: DF.Link | None
 		customer_name: DF.Data | None
 		description: DF.TextEditor | None
+		email: DF.Data | None
 		email_account: DF.Link | None
+		facebook: DF.Data | None
 		first_responded_on: DF.Datetime | None
 		first_response_time: DF.Duration | None
+		instagram: DF.Data | None
 		issue_split_from: DF.Link | None
 		issue_type: DF.Link | None
 		lead: DF.Link | None
+		linkedin: DF.Data | None
 		naming_series: DF.Literal["ISS-.YYYY.-"]
 		on_hold_since: DF.Datetime | None
 		opening_date: DF.Date | None
 		opening_time: DF.Time | None
+		phone_number: DF.Phone | None
 		priority: DF.Link | None
 		project: DF.Link | None
 		raised_by: DF.Data | None
@@ -58,8 +64,11 @@ class Issue(Document):
 		status: DF.Literal["Open", "Replied", "On Hold", "Resolved", "Closed"]
 		subject: DF.Data
 		total_hold_time: DF.Duration | None
+		twitter: DF.Data | None
 		user_resolution_time: DF.Duration | None
 		via_customer_portal: DF.Check
+		website: DF.Data | None
+		whatsapp_number: DF.Phone | None
 	# end: auto-generated types
 
 	def validate(self):

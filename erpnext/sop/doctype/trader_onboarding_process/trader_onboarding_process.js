@@ -109,107 +109,96 @@ frappe.ui.form.on("Trader Onboarding Process", {
     //     },
 
     business_location_address: function(frm) {
-        console.log('address_to_coordinates');
         let address = frm.doc.business_location_address;
-        console.log(address);
-        
         if (address) {
-            console.log("Address entered: ", address);
-    
-            // Make an API call for geocoding the address
+            console.log("Business Location Address entered: ", address);
+
+            // API call to geocode the business address
             frappe.call({
                 type: "GET",
-                url: `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`, 
+                url: `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`,
                 callback: function(response) {
                     if (response && response.length > 0) {
                         let lat = response[0].lat;
                         let lon = response[0].lon;
-                        console.log("Coordinates: ", lat, lon);
-    
-                        // Update GPS coordinates
-                        let geoJSON = {
-                            type: "FeatureCollection",
-                            features: [
-                                {
-                                    type: "Feature",
-                                    geometry: {
-                                        type: "Point",
-                                        coordinates: [parseFloat(lon), parseFloat(lat)]
-                                    },
-                                    properties: {}
-                                }
-                            ]
+
+                        console.log("Business Location Coordinates: ", lat, lon);
+
+                        // Update Business GeoJSON
+                        let businessGeoJSON = {
+                            type: "Feature",
+                            geometry: {
+                                type: "Point",
+                                coordinates: [parseFloat(lon), parseFloat(lat)]
+                            },
+                            properties: {
+                                color: "red", // Marker color for Business Location
+                                type: "Business Location"
+                            }
                         };
-    
-                        frm.set_value('gps_coordinates', JSON.stringify(geoJSON));
-                        frm.set_value('latitude', JSON.stringify(lat));
-                        frm.set_value('longitude', JSON.stringify(lon));
-    
-                        // Optionally, log success or display a message
-                        frappe.msgprint(__('GPS Coordinates updated successfully!'));
+
+                        frm.set_value('gps_coordinates', JSON.stringify(businessGeoJSON));
+                        frm.set_value('latitude', lat);
+                        frm.set_value('longitude', lon);
+
+                        frappe.msgprint(__('Business Location pointer updated successfully!'));
                     } else {
-                        frappe.msgprint(__('Unable to find coordinates for the entered address.'));
+                        frappe.msgprint(__('Unable to find coordinates for the entered business location address.'));
                     }
                 }
             });
         } else {
-            frappe.msgprint(__('Please enter an address.'));
+            frappe.msgprint(__('Please enter a Business Location address.'));
             frm.set_value('gps_coordinates', '');
             frm.set_value('latitude', '');
             frm.set_value('longitude', '');
         }
     },
 
-
     residential_address: function(frm) {
-        console.log('address_to_coordinates');
         let address = frm.doc.residential_address;
-        console.log(address);
-        
         if (address) {
-            console.log("Address entered: ", address);
-    
-            // Make an API call for geocoding the address
+            console.log("Residential Address entered: ", address);
+
+            // API call to geocode the residential address
             frappe.call({
                 type: "GET",
-                url: `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`, 
+                url: `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`,
                 callback: function(response) {
                     if (response && response.length > 0) {
                         let lat = response[0].lat;
                         let lon = response[0].lon;
-                        console.log("Coordinates: ", lat, lon);
-    
-                        // Update GPS coordinates
-                        let geoJSON = {
-                            type: "FeatureCollection",
-                            features: [
-                                {
-                                    type: "Feature",
-                                    geometry: {
-                                        type: "Point",
-                                        coordinates: [parseFloat(lon), parseFloat(lat)]
-                                    },
-                                    properties: {}
-                                }
-                            ]
+
+                        console.log("Residential Coordinates: ", lat, lon);
+
+                        // Update Residential GeoJSON
+                        let residentialGeoJSON = {
+                            type: "Feature",
+                            geometry: {
+                                type: "Point",
+                                coordinates: [parseFloat(lon), parseFloat(lat)]
+                            },
+                            properties: {
+                                color: "blue", // Marker color for Residential Location
+                                type: "Residential Location"
+                            }
                         };
-    
-                        frm.set_value('gps_coordinates', JSON.stringify(geoJSON));
-                        frm.set_value('latitude', JSON.stringify(lat));
-                        frm.set_value('longitude', JSON.stringify(lon));
-    
-                        // Optionally, log success or display a message
-                        frappe.msgprint(__('GPS Coordinates updated successfully!'));
+
+                        frm.set_value('gps_coordinates_1', JSON.stringify(residentialGeoJSON));
+                        frm.set_value('latitude_1', lat);
+                        frm.set_value('longitude_1', lon);
+
+                        frappe.msgprint(__('Residential Location pointer updated successfully!'));
                     } else {
-                        frappe.msgprint(__('Unable to find coordinates for the entered address.'));
+                        frappe.msgprint(__('Unable to find coordinates for the entered residential address.'));
                     }
                 }
             });
         } else {
-            frappe.msgprint(__('Please enter an address.'));
-            frm.set_value('gps_coordinates', '');
-            frm.set_value('latitude', '');
-            frm.set_value('longitude', '');
+            frappe.msgprint(__('Please enter a Residential address.'));
+            frm.set_value('gps_coordinates_1', '');
+            frm.set_value('latitude1', '');
+            frm.set_value('longitude1', '');
         }
     },
     

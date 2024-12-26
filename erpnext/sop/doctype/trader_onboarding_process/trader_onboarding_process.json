@@ -12,16 +12,18 @@
   "date_of_birth",
   "mobile_number",
   "email",
-  "residential_address",
-  "business_location_address",
   "column_break_6c9g",
+  "business_location_address",
   "latitude",
-  "latitude_1",
-  "column_break_t3c1",
   "longitude",
-  "longitude_1",
-  "section_break_a0vg",
+  "column_break_t3c1",
   "gps_coordinates",
+  "section_break_fkac",
+  "residential_address",
+  "latitude_1",
+  "longitude_1",
+  "column_break_fv8p",
+  "gps_coordinates_1",
   "tab_break_sokb",
   "doc_section",
   "field_agent_name",
@@ -167,10 +169,6 @@
    "label": "Transaction"
   },
   {
-   "fieldname": "section_break_a0vg",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "latitude",
    "fieldtype": "Data",
    "label": "Latitude"
@@ -193,11 +191,25 @@
    "fieldname": "longitude_1",
    "fieldtype": "Data",
    "label": "Longitude 1"
+  },
+  {
+   "fieldname": "section_break_fkac",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_fv8p",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gps_coordinates_1",
+   "fieldtype": "Geolocation",
+   "label": "GPS Coordinates 1",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-24 10:41:49.055803",
+ "modified": "2024-12-24 18:12:01.696365",
  "modified_by": "Administrator",
  "module": "SOP",
  "name": "Trader Onboarding Process",
