@@ -8,12 +8,15 @@ erpnext.accounts.taxes.setup_tax_validations("Sales Order");
 erpnext.sales_common.setup_selling_controller();
 
 frappe.ui.form.on("Sales Order", {
+	// onm,xcn
+
 
 	merchant: function (frm) {
         if (frm.doc.merchant) {
             frappe.db.get_doc('Merchant', frm.doc.merchant).then(doc => {
                 frm.set_value('loan_balance', doc.loan_balance);
                 frm.set_value('token_balance', doc.token_balance);
+				frappe.msgprint("Updated");
             });
         }
     },
